@@ -1,0 +1,7 @@
+services:
+  bot:
+    hostname: "bot.local"
+    image: "node:latest"
+    container_name: "discordbot"
+    volumes:
+      - "./bot:/bot:Z"
