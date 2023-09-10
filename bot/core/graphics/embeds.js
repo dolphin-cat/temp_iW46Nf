@@ -1,10 +1,10 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const colors = require('./colors');
 const { prefix } = require('../../config/commands-config.json');
 
 module.exports = {
    info(color, description) {
-      return new MessageEmbed()
+      return new EmbedBuilder()
          .setColor(color || colors.primary)
          .setTitle('Info')
          .setDescription(description)
@@ -12,7 +12,7 @@ module.exports = {
    },
 
    warn(description) {
-      return new MessageEmbed()
+      return new EmbedBuilder()
          .setColor(colors.warn)
          .setTitle('Warning')
          .setDescription(description)
@@ -20,7 +20,7 @@ module.exports = {
    },
 
    error(description) {
-      return new MessageEmbed()
+      return new EmbedBuilder()
          .setColor(colors.error)
          .setTitle('Error')
          .setDescription(description)

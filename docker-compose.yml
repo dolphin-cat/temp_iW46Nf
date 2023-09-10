@@ -4,4 +4,17 @@ services:
     image: "node:latest"
     container_name: "discordbot"
     volumes:
-      - "./bot:/bot:Z"
+      - "./bot:/app:Z"
+    working_dir: "/app/"
+    command: "node index.js"
+    restart: unless-stopped
+
+  recordsite:
+    hostname: "recordsite.local"
+    build: "recordsite"
+    container_name: "recordsite"
+    volumes:
+      - "./recordsite/files/:/code/app/files/"
+    ports:
+      - "6969:6969"
+    restart: unless-stopped

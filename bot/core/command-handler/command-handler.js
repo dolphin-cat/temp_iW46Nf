@@ -135,7 +135,7 @@ module.exports = {
                || commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
          }
       }
-      console.log("138");
+
       return { command, args };
    },
 

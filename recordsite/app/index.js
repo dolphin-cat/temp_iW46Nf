@@ -8,7 +8,8 @@
 
   recbtn.addEventListener("click", async function () {
     let stream = await navigator.mediaDevices.getDisplayMedia({
-      video: true
+      video: true,
+      audio: true
     });
 
     //needed for better browser support
